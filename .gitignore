@@ -1,0 +1,21 @@
+# Visual Studio 사용자 설정 및 캐시
+.vs/
+*.user
+*.suo
+
+# C/C++ 빌드 결과물
+Debug/
+Release/
+x64/
+x86/
+
+# CMake 빌드 디렉터리 (추후 사용)
+build/
+out/
+
+# .NET 빌드 결과물 (WPF 추가 대비)
+bin/
+obj/
+
+# 로그
+*.log
