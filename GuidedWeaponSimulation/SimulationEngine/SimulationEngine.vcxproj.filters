@@ -18,12 +18,33 @@
     <ClCompile Include="SimulationEngine.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="ConsoleView.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="SampleStateGenerator.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="SimulationRunner.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Position.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="WeaponState.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="ConsoleView.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="SampleStateGenerator.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="SimulationRunner.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="SimulationConfig.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>

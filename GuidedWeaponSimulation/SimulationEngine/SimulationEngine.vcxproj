@@ -139,10 +139,17 @@
     </Manifest>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="ConsoleView.cpp" />
+    <ClCompile Include="SampleStateGenerator.cpp" />
     <ClCompile Include="SimulationEngine.cpp" />
+    <ClCompile Include="SimulationRunner.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="ConsoleView.h" />
     <ClInclude Include="Position.h" />
+    <ClInclude Include="SampleStateGenerator.h" />
+    <ClInclude Include="SimulationConfig.h" />
+    <ClInclude Include="SimulationRunner.h" />
     <ClInclude Include="WeaponState.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
