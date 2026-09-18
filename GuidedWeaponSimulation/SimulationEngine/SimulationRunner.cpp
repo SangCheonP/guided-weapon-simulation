@@ -9,25 +9,51 @@
 #include <cmath>
 #include <iostream>
 
-bool runSimulation(const SimulationConfig& config)
+namespace
 {
-    if (config.sampleCount <= 0)
+    SimulationResult validateConfig(const SimulationConfig& config)
     {
-        std::cerr << "Sample count must be greater than 0.\n";
-        return false;
-    }
+        if (config.sampleCount <= 0)
+        {
+            return SimulationResult::InvalidSampleCount;
+        }
 
-    if (!std::isfinite(config.timeStepSec) || config.timeStepSec <= 0.0)
+        if (!std::isfinite(config.timeStepSec) ||
+            config.timeStepSec <= 0.0)
+        {
+            return SimulationResult::InvalidTimeStep;
+        }
+
+        if (config.objectId.empty())
+        {
+            return SimulationResult::EmptyObjectId;
+        }
+
+        if (!std::isfinite(config.initialTemperatureC))
+        {
+            return SimulationResult::InvalidInitialTemperature;
+        }
+
+        return SimulationResult::Success;
+    }
+}
+
+SimulationResult runSimulation(const SimulationConfig& config)
+{
+    SimulationResult validationResult = validateConfig(config);
+
+
+    if (validationResult != SimulationResult::Success)
     {
-        std::cerr << "Time step must be finite and greater than 0.\n";
-        return false;
+        return validationResult;
     }
-
 
     WeaponState sample{};
-    sample.objectId = "SIM001";
+    sample.objectId = config.objectId;
     sample.position = Position{ 100.0, -200.0, 50.0 };
-    sample.temperatureC = 20.0;
+    sample.temperatureC = config.initialTemperatureC;
+
+    printState(sample);
 
     sample.status = SimulationStatus::Running;
 
@@ -47,5 +73,5 @@ bool runSimulation(const SimulationConfig& config)
         printState(sample);
     }
 
-    return true;
+    return SimulationResult::Success;
 }

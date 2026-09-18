@@ -1,5 +1,6 @@
 #pragma once
 
 #include "SimulationConfig.h"
+#include "SimulationResult.h"
 
-bool runSimulation(const SimulationConfig& config);
+SimulationResult runSimulation(const SimulationConfig& config);

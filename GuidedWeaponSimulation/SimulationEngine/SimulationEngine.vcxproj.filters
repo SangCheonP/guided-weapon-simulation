@@ -27,6 +27,9 @@
     <ClCompile Include="SimulationRunner.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="CsvStateWriter.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Position.h">
@@ -45,6 +48,12 @@
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="SimulationConfig.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="SimulationResult.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="CsvStateWriter.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>
